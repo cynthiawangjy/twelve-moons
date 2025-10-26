@@ -108,6 +108,7 @@ body {
   z-index: 1;
 }
 
+
 /* The current page content (top layer) - gets wiped away by mask */
 .page-transition .current-page-content {
   position: absolute;
@@ -127,18 +128,8 @@ body {
   clip-path: inset(100% 0 0 0);
 }
 
-/* The current page content (top layer) - gets wiped away by mask */
-.page-transition .current-page-content {
-  transition: clip-path 1.2s ease-in-out;
-}
 
-.page-transition.slide-in .current-page-content {
-  /* No blur - clean wipe effect */
-}
 
-/* .paragraph p {
-  line-height: 175%;
-} */
 
 p {
   font-family: 'ABC Helveesti';

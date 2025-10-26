@@ -2,6 +2,7 @@
 #zhongqiujie {
   background: var(--blue);
   color: var(--yellow);
+  transition: background 0.5s ease;
 }
 
 .link, .nested-links a {

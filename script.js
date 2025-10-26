@@ -195,4 +195,30 @@ $(document).ready(function() {
       $('.link:has(a:contains("重阳节")) a').css('color', 'var(--yellow)');
     }
   }
+
+  // Simple scroll-based background transition
+  $(window).on('scroll', function() {
+    const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    const documentHeight = $(document).height();
+    const scrollPercent = scrollTop / (documentHeight - windowHeight);
+    
+    // 春节 (Spring Festival) - Red to Pink
+    if ($('#chunjie').length > 0) {
+      if (scrollPercent > 0.5) {
+        $('#chunjie').css('background', '#FF5597');
+      } else {
+        $('#chunjie').css('background', '#F1001E');
+      }
+    }
+    
+    // 中秋节 (Mid-Autumn Festival) - Blue to Purple
+    if ($('#zhongqiujie').length > 0) {
+      if (scrollPercent > 0.5) {
+        $('#zhongqiujie').css('background', '#67287F');
+      } else {
+        $('#zhongqiujie').css('background', '#0076D0');
+      }
+    }
+  });
 });
