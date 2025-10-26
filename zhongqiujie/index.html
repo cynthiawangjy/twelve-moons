@@ -133,15 +133,22 @@
   </section>
 
   <script>
-    window.addEventListener("scroll", function() {
-      let scrollPosition = window.scrollY;
-      let documentHeight = document.documentElement.scrollHeight;
-      let windowHeight = window.innerHeight;
+    // Safari-compatible scroll effect
+    function handleScrollEffect() {
+      let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      let documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      let windowHeight = window.innerHeight || document.documentElement.clientHeight;
       
-      // Get CSS variables
+      // Get CSS variables with fallbacks
       let rootStyles = getComputedStyle(document.documentElement);
-      let newColor = rootStyles.getPropertyValue('--purple');
-      let oldColor = rootStyles.getPropertyValue('--blue');
+      let newColor = rootStyles.getPropertyValue('--purple') || '#67287F';
+      let oldColor = rootStyles.getPropertyValue('--blue') || '#0076D0';
       
       // Check if the user has scrolled halfway down the page
       if (scrollPosition > (documentHeight - windowHeight) / 2) {
@@ -149,7 +156,10 @@
       } else {
           document.body.style.backgroundColor = oldColor;
       }
-    });
+    }
+
+    // Use passive event listener for better performance
+    window.addEventListener('scroll', handleScrollEffect, { passive: true });
   </script>
 
   <script

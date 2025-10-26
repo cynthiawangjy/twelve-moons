@@ -196,29 +196,41 @@ $(document).ready(function() {
     }
   }
 
-  // Simple scroll-based background transition
-  $(window).on('scroll', function() {
-    const scrollTop = $(window).scrollTop();
-    const windowHeight = $(window).height();
-    const documentHeight = $(document).height();
+  // Safari-compatible scroll-based background transition
+  function handleScrollTransition() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
     const scrollPercent = scrollTop / (documentHeight - windowHeight);
     
     // 春节 (Spring Festival) - Red to Pink
-    if ($('#chunjie').length > 0) {
+    const chunjieElement = document.getElementById('chunjie');
+    if (chunjieElement) {
       if (scrollPercent > 0.5) {
-        $('#chunjie').css('background', '#FF5597');
+        chunjieElement.style.background = '#FF5597';
       } else {
-        $('#chunjie').css('background', '#F1001E');
+        chunjieElement.style.background = '#F1001E';
       }
     }
     
     // 中秋节 (Mid-Autumn Festival) - Blue to Purple
-    if ($('#zhongqiujie').length > 0) {
+    const zhongqiujieElement = document.getElementById('zhongqiujie');
+    if (zhongqiujieElement) {
       if (scrollPercent > 0.5) {
-        $('#zhongqiujie').css('background', '#67287F');
+        zhongqiujieElement.style.background = '#67287F';
       } else {
-        $('#zhongqiujie').css('background', '#0076D0');
+        zhongqiujieElement.style.background = '#0076D0';
       }
     }
-  });
+  }
+
+  // Use both jQuery and vanilla JS for maximum compatibility
+  $(window).on('scroll', handleScrollTransition);
+  window.addEventListener('scroll', handleScrollTransition, { passive: true });
 });

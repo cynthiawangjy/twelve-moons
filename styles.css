@@ -23,16 +23,16 @@
 @font-face {
   font-family: 'Adobe Heiti Std';
   src: url('fonts/AdobeHeitiStd-Regular.otf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
     font-family: "Self Modern Regular";
-    src: url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.eot");
-    src: url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/cf9209cb40da7169670815cd8c1860c9.svg#Self Modern Regular")format("svg");
+    src: url("fonts/SelfModern.woff2") format("woff2"),
+         url("fonts/SelfModern.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -41,25 +41,24 @@
          url('fonts/SelfModern-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Self Modern";
-    src: url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.eot");
-    src: url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/f3ce67f6372d7319dc7e9993805cf5c9.svg#Self Modern")format("svg");
+    src: url("fonts/SelfModern-Italic.woff2") format("woff2"),
+         url("fonts/SelfModern-Italic.woff") format("woff");
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
   font-family: 'ABC Helveesti';
   src: url('fonts/ABCHelveesti-Regular-Trial.woff') format('woff'),
        url('fonts/ABCHelveesti-Regular-Trial.woff2') format('woff2');
-  font-weight: 400;     
+  font-weight: 400;
+  font-display: swap;
 }
 
 html, body{
@@ -155,10 +154,9 @@ h2 {
 }
 
 .quote p {
-  font-family: "Self Modern";
+  font-family: "Self Modern", "Self Modern Regular", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-style: normal;
 }
 .quote {
   padding-left: 16px;
