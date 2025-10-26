@@ -135,7 +135,7 @@
   <script>
     // Safari-compatible scroll effect
     function handleScrollEffect() {
-      let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      let scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       let documentHeight = Math.max(
         document.body.scrollHeight,
         document.body.offsetHeight,
@@ -145,21 +145,28 @@
       );
       let windowHeight = window.innerHeight || document.documentElement.clientHeight;
       
-      // Get CSS variables with fallbacks
-      let rootStyles = getComputedStyle(document.documentElement);
-      let newColor = rootStyles.getPropertyValue('--purple') || '#67287F';
-      let oldColor = rootStyles.getPropertyValue('--blue') || '#0076D0';
+      // Debug logging for Safari
+      console.log('Zhongqiujie Scroll:', scrollPosition, 'Percent:', scrollPosition / (documentHeight - windowHeight));
+      
+      // Use hardcoded colors instead of CSS variables for Safari compatibility
+      let newColor = '#67287F'; // purple
+      let oldColor = '#0076D0'; // blue
       
       // Check if the user has scrolled halfway down the page
       if (scrollPosition > (documentHeight - windowHeight) / 2) {
           document.body.style.backgroundColor = newColor;
+          console.log('Zhongqiujie color changed to:', newColor);
       } else {
           document.body.style.backgroundColor = oldColor;
+          console.log('Zhongqiujie color changed to:', oldColor);
       }
     }
 
     // Use passive event listener for better performance
     window.addEventListener('scroll', handleScrollEffect, { passive: true });
+    
+    // Also trigger on load to set initial state
+    document.addEventListener('DOMContentLoaded', handleScrollEffect);
   </script>
 
   <script

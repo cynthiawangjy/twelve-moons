@@ -22,14 +22,14 @@
 
 @font-face {
   font-family: 'Adobe Heiti Std';
-  src: url('fonts/AdobeHeitiStd-Regular.otf') format('opentype');
+  src: url('./fonts/AdobeHeitiStd-Regular.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
     font-family: "Self Modern Regular";
-    src: url("fonts/SelfModern.woff2") format("woff2"),
-         url("fonts/SelfModern.woff") format("woff");
+    src: url("./fonts/SelfModern.woff2") format("woff2"),
+         url("./fonts/SelfModern.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -37,8 +37,8 @@
 
 @font-face {
     font-family: "Self Modern Bold";
-    src: url('fonts/SelfModern-Bold.woff') format('woff'), 
-         url('fonts/SelfModern-Bold.woff2') format('woff2');
+    src: url('./fonts/SelfModern-Bold.woff') format('woff'), 
+         url('./fonts/SelfModern-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -46,8 +46,8 @@
 
 @font-face {
     font-family: "Self Modern";
-    src: url("fonts/SelfModern-Italic.woff2") format("woff2"),
-         url("fonts/SelfModern-Italic.woff") format("woff");
+    src: url("./fonts/SelfModern-Italic.woff2") format("woff2"),
+         url("./fonts/SelfModern-Italic.woff") format("woff");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -55,8 +55,8 @@
 
 @font-face {
   font-family: 'ABC Helveesti';
-  src: url('fonts/ABCHelveesti-Regular-Trial.woff') format('woff'),
-       url('fonts/ABCHelveesti-Regular-Trial.woff2') format('woff2');
+  src: url('./fonts/ABCHelveesti-Regular-Trial.woff') format('woff'),
+       url('./fonts/ABCHelveesti-Regular-Trial.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
@@ -154,9 +154,12 @@ h2 {
 }
 
 .quote p {
-  font-family: "Self Modern", "Self Modern Regular", Georgia, serif;
+  font-family: "Self Modern", "Self Modern Regular", "Times New Roman", Times, Georgia, serif;
   font-style: italic;
   font-weight: 400;
+  /* Force font loading in Safari */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .quote {
   padding-left: 16px;

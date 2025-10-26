@@ -198,7 +198,7 @@ $(document).ready(function() {
 
   // Safari-compatible scroll-based background transition
   function handleScrollTransition() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
     const documentHeight = Math.max(
       document.body.scrollHeight,
@@ -209,28 +209,34 @@ $(document).ready(function() {
     );
     const scrollPercent = scrollTop / (documentHeight - windowHeight);
     
+    // Debug logging for Safari
+    console.log('Scroll:', scrollTop, 'Percent:', scrollPercent);
+    
     // 春节 (Spring Festival) - Red to Pink
     const chunjieElement = document.getElementById('chunjie');
     if (chunjieElement) {
-      if (scrollPercent > 0.5) {
-        chunjieElement.style.background = '#FF5597';
-      } else {
-        chunjieElement.style.background = '#F1001E';
-      }
+      const newColor = scrollPercent > 0.5 ? '#FF5597' : '#F1001E';
+      chunjieElement.style.backgroundColor = newColor;
+      chunjieElement.style.background = newColor;
+      console.log('Chunjie color:', newColor);
     }
     
     // 中秋节 (Mid-Autumn Festival) - Blue to Purple
     const zhongqiujieElement = document.getElementById('zhongqiujie');
     if (zhongqiujieElement) {
-      if (scrollPercent > 0.5) {
-        zhongqiujieElement.style.background = '#67287F';
-      } else {
-        zhongqiujieElement.style.background = '#0076D0';
-      }
+      const newColor = scrollPercent > 0.5 ? '#67287F' : '#0076D0';
+      zhongqiujieElement.style.backgroundColor = newColor;
+      zhongqiujieElement.style.background = newColor;
+      console.log('Zhongqiujie color:', newColor);
     }
   }
 
   // Use both jQuery and vanilla JS for maximum compatibility
   $(window).on('scroll', handleScrollTransition);
   window.addEventListener('scroll', handleScrollTransition, { passive: true });
+  
+  // Also trigger on load to set initial state
+  $(document).ready(function() {
+    handleScrollTransition();
+  });
 });
