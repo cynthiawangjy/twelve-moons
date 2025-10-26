@@ -1,0 +1,12 @@
+#chongyangjie {
+  background: var(--gold);
+  color: var(--yellow);
+}
+
+.link, .nested-links a {
+  color: var(--yellow);
+}
+
+.link a:hover, .nested-links a:hover, .date:hover {
+  color: var(--orange);
+}

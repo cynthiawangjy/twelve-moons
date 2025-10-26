@@ -1,0 +1,12 @@
+#qixi {
+  background: var(--lavendar);
+  color: var(--red);
+}
+
+.link, .nested-links a, .date {
+  color: var(--red);
+}
+
+.link a:hover, .nested-links a:hover, .date:hover {
+  color: var(--purple);
+}

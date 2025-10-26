@@ -1,0 +1,12 @@
+#duanwujie {
+  background: var(--turquoise);
+  color: var(--blue);
+}
+
+.link, .nested-links a, .date {
+  color: var(--blue);
+}
+
+.link a:hover, .nested-links a:hover, .date:hover {
+  color: var(--green);
+}

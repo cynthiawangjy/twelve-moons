@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chong Yang Jie</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="left">
+    <div class="links">
+      <div class="link">
+        <a href="../chunjie/">[ <span class="char">春节</span> ]</a>
+      </div>
+      
+      <div class="link">
+        <a href="../yuanxiaojie/">[ <span class="char">元宵节</span> ]</a>
+      </div>
+      
+      <div class="link">
+        <a href="../duanwujie/">[ <span class="char">端午节</span> ]</a>
+      </div>
+      
+      <div class="link">
+        <a href="../qixi/">[ <span class="char">七夕</span> ]</a>
+      </div>
+
+      <div class="link">  
+        <a href="../zhongqiujie/">[ <span class="char">中秋节</span> ]</a>
+      </div>
+
+      <div class="link">
+        <a href="#">[ <span class="char">重阳节</span> ]</a>
+        <div class="nested-links">
+          <a href="#">> Reading story...</a>
+          <a href="#">> Make food</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="date">
+    <a href="../"><p>9<span class="char">月</span>, <span class="char">第</span>9<span class="char">天</span></p></a>
+  </div>
+  
+  <section id="chongyangjie">
+    <div class="content">
+      <img src="../images/重阳节.svg" alt="">
+
+      <div class="paragraph">
+        <p>Like most traditional festivals, the Double Ninth Festival also has ancient legends.
+        </p>
+      </div>
+  
+      <div class="paragraph">
+        <p>
+          According to legend, during the Eastern Han Dynasty, there was a plague demon in the Ru River. Whenever it appeared, people in every household would fall ill, and people would die every day. The people in this area were ravaged by the plague demon.
+        </p>
+      </div>
+  
+      <div class="paragraph">
+        <p>
+          A plague took away the parents of the young man Heng Jing, and he himself almost died because of the disease. After recovering from the illness, he said goodbye to his beloved wife and fellow villagers, determined to go out to visit immortals to learn skills and get rid of the plague for the people. Heng Jing went around to seek teachers and visited famous mountains and sages in various places. Finally, he heard that there was an ancient mountain in the east, and there was an immortal with boundless magic power on the mountain. Heng Jing was not afraid of hardships and the long journey. Under the guidance of the crane, he finally found the mountain and the immortal with magical powers. The immortal was moved by his spirit and finally took Heng Jing in, taught him the swordsmanship of subduing demons, and gave him a sword to subdue demons. Heng Jing practiced hard without sleep and food, and finally practiced extraordinary martial arts.
+        </p>
+      </div>
+  
+      <div class="paragraph">
+        <p>
+          On this day, the immortal called Hengjing to him and said, "Tomorrow is the ninth day of the ninth lunar month. The plague demon will come out to do evil again. You have learned the skills and should go back to eliminate the harm for the people." The immortal gave Hengjing a bag of dogwood leaves and a cup of chrysanthemum wine, and secretly taught him how to ward off evil spirits, and let Hengjing ride on the crane to rush home.
+        </p>
+      </div>
+  
+      <div class="paragraph">
+        <p>
+          Heng Jing returned to his hometown. On the morning of September 9, he led the villagers to a nearby mountain according to the instructions of the immortal. He gave each of them a piece of dogwood leaf and a cup of chrysanthemum wine, and prepared to subdue the demon. At noon, with a few strange cries, the plague demon rushed out of the Ru River. However, when the plague demon rushed down the mountain, it suddenly smelled the strange fragrance of dogwood and chrysanthemum wine, and stopped abruptly. Its face suddenly changed. At this time, Heng Jing chased down the mountain with a demon-subduing sword, and stabbed the plague demon to death with a few rounds. From then on, the custom of climbing high to avoid the plague on September 9 has been passed down year after year. Wu Jun of Liang recorded this in his book "Continuation of Qixie Ji".
+        </p>
+      </div>
+      
+      <div class="paragraph">
+        <p>
+          Later, people regarded the custom of climbing high on the Double Ninth Festival as an activity to avoid disasters. In addition, in the traditional concept of the Central Plains people, double nine also means long life and good health, so later the Double Ninth Festival was established as the Elderly Day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <script src="../script.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Show the current holiday's nested links by default
+      const $currentHolidayLinks = $('.link').eq(5).find('.nested-links');
+      $currentHolidayLinks.show();
+    });
+  </script>
+</body>
+</html>
